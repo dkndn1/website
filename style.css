@@ -1,0 +1,235 @@
+/* Basic Reset & Defaults */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif; /* Montserrat font applied */
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700; /* Example: Use a bolder weight for headings */
+}
+
+p {
+    font-weight: 400; /* Example: Use regular weight for paragraphs */
+    margin-bottom: 1em; /* Add some default spacing for paragraphs */
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background: #333;
+    color: #fff;
+    padding: 15px 0;
+    border-bottom: #0779e4 3px solid;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Adjust as needed: flex-start, center, etc. */
+}
+
+.logo-container {
+    margin-right: 20px;
+}
+
+#header-logo {
+    max-height: 60px; /* **** IMPORTANT: Adjust this to size your logo **** */
+    width: auto;
+}
+
+.header-text {
+    text-align: left;
+}
+
+.header-text h1 {
+    margin-bottom: 5px;
+    font-size: 2.2em;
+    font-weight: 700; /* Ensure heading weight is applied */
+}
+.header-text p {
+    font-size: 0.9em;
+    margin-top: 0;
+    font-weight: 400; /* Ensure paragraph weight is applied */
+}
+
+
+/* Sections */
+main section {
+    padding: 40px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+main section:last-child {
+    border-bottom: none;
+}
+
+main section h2 {
+    text-align: center;
+    margin-bottom: 25px; /* Increased margin a bit */
+    font-size: 2em;
+    color: #333;
+}
+
+/* 3D Model Boxes */
+.demo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; /* Increased gap */
+    margin-top: 20px;
+}
+
+.model-box {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Slightly enhanced shadow */
+    text-align: center;
+    display: flex; /* For better internal alignment if needed */
+    flex-direction: column; /* Stack title and model vertically */
+}
+
+.model-box h3 {
+    margin-bottom: 15px;
+    color: #0779e4;
+    font-weight: 600; /* Slightly less bold than main headings */
+}
+
+.model-box .placeholder-text {
+    min-height: 250px; /* Adjusted min-height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    border: 2px dashed #ddd;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    flex-grow: 1; /* Allow placeholder to take available space */
+}
+
+.model-box iframe {
+    width: 100%;
+    min-height: 300px;
+    border: none;
+    flex-grow: 1; /* Allow iframe to take available space */
+}
+
+
+/* Buttons */
+.action-buttons {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: #555;
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 5px 10px;
+    font-size: 1.1em;
+    font-weight: 500; /* Montserrat medium weight for buttons */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.btn-primary {
+    background: #0779e4;
+}
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+.btn-secondary {
+    background: #6c757d;
+}
+.btn-secondary:hover {
+    background: #5a6268;
+}
+
+/* Contact Section */
+#contact p {
+    text-align: center;
+    margin-bottom: 10px;
+}
+#contact a {
+    color: #0779e4;
+    text-decoration: none;
+    font-weight: 500;
+}
+#contact a:hover {
+    text-decoration: underline;
+}
+
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 25px 0; /* Increased padding */
+    margin-top: 30px; /* Increased margin */
+}
+footer p {
+    margin-bottom: 0; /* Remove default paragraph margin in footer */
+    font-weight: 400;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo-container {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .header-text {
+        text-align: center;
+    }
+
+    .header-text h1 {
+        font-size: 2em;
+    }
+    main section h2 {
+        font-size: 1.8em;
+    }
+    .btn {
+        padding: 10px 20px;
+        font-size: 1em;
+        width: 80%; /* Make buttons take more width on mobile */
+        max-width: 280px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .btn + .btn { /* Add margin between stacked buttons */
+        margin-top: 10px;
+    }
+}
