@@ -3,94 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Awesome New Product - 3D Demos!</title>
-
-    <!-- GOOGLE FONTS - MONTSERRAT -->
+    <title>3D Configurator Studio - Interactive Product Visualization</title>
+    
+    <!-- Inter Font for modern typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <!-- Make sure to use the exact link provided by Google Fonts if it's different! -->
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Link to external CSS file -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <div class="container header-content">
-            <div class="logo-container">
-                <!-- **** IMPORTANT: Update src if your logo filename or path is different **** -->
-                <img src="logo.png" alt="[Your Company Name] Logo" id="header-logo">
-            </div>
-            <div class="header-text">
-                <h1>Discover [Your Product Name]!</h1>
-                <p>Experience our revolutionary product with interactive 3D demos and configurators.</p>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">787 Studio</a>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="#demos">Demos</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </header>
 
-    <main>
-        <section id="intro" class="container">
-            <h2>The Future is Here</h2>
-            <p>
-                [Your compelling marketing copy about the product goes here.
-                Explain its benefits, what problems it solves, and why it's unique.]
-            </p>
-        </section>
+    <section class="hero">
+        <div class="container">
+            <h1 class="animate-in">Interactive 3D Product Viewer and Configurators</h1>
+            <p class="animate-in">Transform your products with immersive 3D visualization and real-time customization experiences that engage customers and drive conversions.</p>
+            <a href="#demos" class="cta-button animate-in">
+                <span>Explore Demos</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M7 13l3 3 7-7"/>
+                </svg>
+            </a>
+        </div>
+    </section>
 
-        <section id="demos" class="container">
-            <h2>Interactive 3D Demos & Configurators</h2>
-            <p>Explore the features and customize [Your Product Name] to your needs.</p>
-
+    <section id="demos">
+        <div class="container">
+            <h2 class="section-title">Interactive Demos</h2>
+            <p class="section-subtitle">Experience the power of 3D product visualization with our viewer and interactive configurators</p>
+            
             <div class="demo-grid">
-                <div class="model-box" id="model-container-1">
-                    <h3>Demo 1: Core Features</h3>
-                    <!--
-                        PASTE YOUR 3D MODEL/CONFIGURATOR EMBED CODE FOR DEMO 1 HERE.
-                        Example (replace with your actual code):
-                        <iframe title="Example 3D Model" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="YOUR_MODEL_EMBED_URL_1"></iframe>
-                    -->
-                    <p class="placeholder-text">[3D Model/Configurator 1 Placeholder - Replace this with your embed code]</p>
+                <div class="demo-card">
+                    <div class="demo-card-header">
+                        <h3>Product Showcase</h3>
+                        <p>Interactive 3D model with real-time lighting and materials</p>
+                    </div>
+                    <div class="demo-viewer">
+                        <iframe src="
+                        <iframe src="https://app.vectary.com/p/6y7xT5p3b9eVAC5oBtJ10F" frameborder="0" width="100%" height="480" allow="xr-spatial-tracking; fullscreen;"></iframe>
+                        " 
+                                allow="xr-spatial-tracking; fullscreen;"
+                                title="3D Product Showcase"></iframe>
+                    </div>
                 </div>
 
-                <div class="model-box" id="model-container-2">
-                    <h3>Demo 2: Custom Configuration</h3>
-                    <!--
-                        PASTE YOUR 3D MODEL/CONFIGURATOR EMBED CODE FOR DEMO 2 HERE.
-                        Example (replace with your actual code):
-                        <iframe title="Example 3D Configurator" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="YOUR_MODEL_EMBED_URL_2"></iframe>
-                    -->
-                    <p class="placeholder-text">[3D Model/Configurator 2 Placeholder - Replace this with your embed code]</p>
+                <div class="demo-card">
+                    <div class="demo-card-header">
+                        <h3>Custom Configurator</h3>
+                        <p>Full customization with color, material, and feature options</p>
+                    </div>
+                    <div class="demo-viewer">
+                        <div class="placeholder">
+                            <p>Custom configurator demo will be displayed here</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="call-to-action" class="container">
-            <h2>Interested? Get in Touch!</h2>
-            <p>
-                Want to learn more, discuss a project, or get a quote? We'd love to hear from you.
-            </p>
-            <div class="action-buttons">
-                <a href="#contact" class="btn btn-primary" id="contact-me-btn">Contact Me</a>
-                <a href="#" class="btn btn-secondary" id="email-me-btn">Email Me Directly</a>
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose 3D Configurators?</h2>
+            <p class="section-subtitle">Powerful features that enhance customer experience and boost sales</p>
+            
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Real-time Customization</h3>
+                    <p>Instant visual feedback as customers customize products to their preferences</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile Optimized</h3>
+                    <p>Seamless experience across all devices with responsive 3D rendering</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Lightning Fast</h3>
+                    <p>Optimized performance with smooth interactions and quick loading times</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Conversion Focused</h3>
+                    <p>Designed to engage customers and drive purchasing decisions</p>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="contact" class="container">
-            <h2>Contact Information</h2>
-            <p>
-                You can reach us via email for any inquiries. We typically respond within 24-48 hours.
-            </p>
-            <!-- **** IMPORTANT: Update your email address **** -->
-            <p><strong>Email:</strong> <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-        </section>
-    </main>
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-card">
+                <h2>Ready to Transform Your Products?</h2>
+                <p>Let's discuss how interactive 3D configurators can enhance your customer experience and boost your sales. We typically respond within 12 hours.</p>
+                
+                <div class="contact-buttons">
+                    <a href="#" class="btn btn-primary" id="email-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        Send Email
+                    </a>
+                    <a href="mailto:hello@787studio.com" class="btn btn-secondary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        Direct Contact
+                    </a>
+                </div>
+                
+                <p style="margin-top: 24px;">
+                    <strong>Email:</strong> 
+                    <a href="mailto:hello@787studio.com" class="email-link">hello@787studio.com</a>
+                </p>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <div class="container">
-             <!-- **** IMPORTANT: Update your company name **** -->
-            <p>&copy; <span id="current-year"></span> [Your Company Name]. All rights reserved.</p>
+            <p>&copy; <span id="current-year"></span> 787 Studio. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- Link to external JavaScript file -->
     <script src="script.js"></script>
 </body>
 </html>
