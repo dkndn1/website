@@ -10,393 +10,109 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+
     <style>
-        :root {
-            --primary: #000;
-            --primary-light: #333;
-            --accent: #0066ff;
-            --accent-hover: #0052cc;
-            --text-primary: #000;
-            --text-secondary: #666;
-            --text-light: #999;
-            --bg-primary: #fff;
-            --bg-secondary: #f8f9fa;
-            --bg-card: #fff;
-            --border: #e5e7eb;
-            --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
-            --radius: 12px;
-            --transition: all 0.2s ease;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            color: var(--text-primary);
-            background: var(--bg-primary);
-            font-size: 16px;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            background: var(--bg-primary);
-            border-bottom: 1px solid var(--border);
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.9);
-        }
-
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--text-primary);
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover {
-            color: var(--text-primary);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 80px 0 60px;
-            text-align: center;
-            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            margin-bottom: 24px;
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-        }
-
-        .hero p {
-            font-size: 20px;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto 40px;
-            line-height: 1.5;
-        }
-
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--accent);
-            color: white;
-            padding: 16px 32px;
-            border-radius: var(--radius);
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-            box-shadow: var(--shadow);
-        }
-
-        .cta-button:hover {
-            background: var(--accent-hover);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* Section Styling */
-        section {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
-        }
-
-        .section-subtitle {
-            font-size: 18px;
-            color: var(--text-secondary);
-            text-align: center;
-            margin-bottom: 60px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Demo Grid */
-        .demo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
-        }
-
-        .demo-card {
-            background: var(--bg-card);
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            border: 1px solid var(--border);
-        }
-
-        .demo-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-
+        /* --- Button and Modal Styles --- */
         .demo-card-header {
-            padding: 24px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .demo-card h3 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: var(--text-primary);
-        }
-
-        .demo-card p {
-            color: var(--text-secondary);
-            font-size: 14px;
-        }
-
-        .demo-viewer {
-            height: 400px;
-            position: relative;
-            background: var(--bg-secondary);
             display: flex;
-            align-items: center;
-            justify-content: center;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        .demo-card-header > div {
+            flex-grow: 1;
+        }
+        .open-modal-btn {
+            background: transparent;
+            border: none;
+            padding: 4px;
+            cursor: pointer;
+            color: #888;
+            border-radius: 50%;
+            transition: background-color 0.2s, color 0.2s;
+            flex-shrink: 0;
+        }
+        .open-modal-btn:hover {
+            background-color: #f0f0f0;
+            color: #111;
+        }
+        .open-modal-btn svg {
+            width: 20px;
+            height: 20px;
+            display: block;
         }
 
-        .demo-viewer iframe {
+        /* Modal Overlay */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .modal-overlay.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Modal Content */
+        .modal-content {
+            position: relative;
+            background: #1c1c1e; /* Dark background to match theme */
+            padding: 20px;
+            border-radius: 12px;
+            width: 90vw;
+            height: 90vh;
+            max-width: 1400px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        
+        .modal-iframe {
+            flex-grow: 1;
             width: 100%;
             height: 100%;
             border: none;
+            border-radius: 8px; /* Rounded corners for the iframe itself */
         }
-
-        .placeholder {
-            color: var(--text-light);
-            font-size: 14px;
-            text-align: center;
-        }
-
-        /* Features Section */
-        .features {
-            background: var(--bg-secondary);
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 32px;
-        }
-
-        .feature {
-            text-align: center;
-            padding: 32px 16px;
-        }
-
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--accent);
+        
+        #modal-close-btn {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 36px;
+            height: 36px;
+            background: #fff;
+            border: none;
             border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            color: #333;
             display: flex;
-            align-items: center;
             justify-content: center;
-            margin: 0 auto 16px;
-            font-size: 24px;
-            color: white;
-        }
-
-        .feature h3 {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .feature p {
-            color: var(--text-secondary);
-            font-size: 14px;
-        }
-
-        /* Contact Section */
-        .contact {
-            text-align: center;
-        }
-
-        .contact-card {
-            background: var(--bg-card);
-            border-radius: var(--radius);
-            padding: 48px;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .contact-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            margin-top: 32px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 12px 24px;
-            border-radius: var(--radius);
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
-            border: 1px solid var(--border);
+            line-height: 1;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            z-index: 1001;
+        }
+        #modal-close-btn:hover {
+            background: #f0f0f0;
         }
 
-        .btn-primary {
-            background: var(--accent);
-            color: white;
-            border-color: var(--accent);
-        }
-
-        .btn-primary:hover {
-            background: var(--accent-hover);
-            border-color: var(--accent-hover);
-        }
-
-        .btn-secondary {
-            background: var(--bg-primary);
-            color: var(--text-primary);
-        }
-
-        .btn-secondary:hover {
-            background: var(--bg-secondary);
-        }
-
-        .email-link {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .email-link:hover {
-            text-decoration: underline;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--bg-secondary);
-            border-top: 1px solid var(--border);
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        footer p {
-            color: var(--text-secondary);
-            font-size: 14px;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .nav-links {
-                flex-direction: column;
-                gap: 16px;
-                text-align: center;
-            }
-
-            .hero {
-                padding: 60px 0 40px;
-            }
-
-            section {
-                padding: 60px 0;
-            }
-
-            .demo-grid {
-                grid-template-columns: 1fr;
-                gap: 24px;
-            }
-
-            .demo-card {
-                min-width: 0;
-            }
-
-            .contact-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .btn {
-                width: 100%;
-                max-width: 280px;
-                justify-content: center;
-            }
-        }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Loading animation */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-in {
-            animation: fadeInUp 0.6s ease-out;
+        /* Prevent background scroll when modal is open */
+        body.modal-open {
+            overflow: hidden;
         }
     </style>
 </head>
@@ -418,7 +134,7 @@
 
     <section class="hero">
         <div class="container">
-            <h1 class="animate-in">Interactive 3D Product Configurators</h1>
+            <h1 class="animate-in">Interactive 3D Product Viewer and Configurators</h1>
             <p class="animate-in">Transform your products with immersive 3D visualization and real-time customization experiences that engage customers and drive conversions.</p>
             <a href="#demos" class="cta-button animate-in">
                 <span>Explore Demos</span>
@@ -432,36 +148,45 @@
     <section id="demos">
         <div class="container">
             <h2 class="section-title">Interactive Demos</h2>
-            <p class="section-subtitle">Experience the power of 3D product visualization with our interactive configurators</p>
+            <p class="section-subtitle">Experience the power of 3D product visualization with our viewer and interactive configurators</p>
             
             <div class="demo-grid">
                 <div class="demo-card">
                     <div class="demo-card-header">
-                        <h3>Product Showcase</h3>
-                        <p>Interactive 3D model with real-time lighting and materials</p>
+                        <div>
+                            <h3>Product Showcase</h3>
+                            <p>Interactive 3D model with real-time lighting and materials</p>
+                        </div>
+                        <button class="open-modal-btn" aria-label="Open in window" title="Open in window">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+                        </button>
                     </div>
                     <div class="demo-viewer">
                         <iframe src="https://app.vectary.com/p/6y7xT5p3b9eVAC5oBtJ10F" 
-                                allow="xr-spatial-tracking; fullscreen;"
-                                title="3D Product Showcase"></iframe>
+                                frameborder="0" width="100%" height="480" 
+                                allow="xr-spatial-tracking; fullscreen" title="3D Product Showcase"></iframe>
                     </div>
                 </div>
 
                 <div class="demo-card">
                     <div class="demo-card-header">
-                        <h3>Custom Configurator</h3>
-                        <p>Full customization with color, material, and feature options</p>
+                        <div>
+                            <h3>Custom Configurator</h3>
+                            <p>Full customization with color, material, and feature options</p>
+                        </div>
+                         <button class="open-modal-btn" aria-label="Open in window" title="Open in window">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+                        </button>
                     </div>
                     <div class="demo-viewer">
-                        <div class="placeholder">
-                            <p>Custom configurator demo will be displayed here</p>
-                        </div>
+                     <iframe src="https://app.vectary.com/p/56iS1JuxfhNoChXQbDSgXs" frameborder="0" width="100%" height="480" allow="xr-spatial-tracking; fullscreen;"></iframe>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- *** RESTORED FEATURES SECTION *** -->
     <section id="features" class="features">
         <div class="container">
             <h2 class="section-title">Why Choose 3D Configurators?</h2>
@@ -492,11 +217,12 @@
         </div>
     </section>
 
+    <!-- *** RESTORED CONTACT SECTION *** -->
     <section id="contact" class="contact">
         <div class="container">
             <div class="contact-card">
                 <h2>Ready to Transform Your Products?</h2>
-                <p>Let's discuss how interactive 3D configurators can enhance your customer experience and boost your sales. We typically respond within 24 hours.</p>
+                <p>Let's discuss how interactive 3D configurators can enhance your customer experience and boost your sales. We typically respond within 12 hours.</p>
                 
                 <div class="contact-buttons">
                     <a href="#" class="btn btn-primary" id="email-btn">
@@ -528,66 +254,90 @@
         </div>
     </footer>
 
+    <!-- Modal Structure -->
+    <div id="modal-overlay" class="modal-overlay">
+        <div id="modal-content" class="modal-content">
+            <button id="modal-close-btn" aria-label="Close window">&times;</button>
+            <iframe id="modal-iframe" class="modal-iframe"
+                    src=""
+                    frameborder="0"
+                    allow="xr-spatial-tracking; fullscreen"
+                    title="Interactive 3D Viewer">
+            </iframe>
+        </div>
+    </div>
+
+    <!-- Embedded JavaScript for functionality -->
     <script>
-        // Set current year
-        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set current year in the footer
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
 
-        // Email button functionality
-        document.getElementById('email-btn').addEventListener('click', function(e) {
-            e.preventDefault();
-            const subject = 'Inquiry about 3D Product Configurators';
-            const body = `Hello,
+            // --- Modal Window Functionality ---
+            const modalOverlay = document.getElementById('modal-overlay');
+            const modalIframe = document.getElementById('modal-iframe');
+            const modalCloseBtn = document.getElementById('modal-close-btn');
+            const openModalButtons = document.querySelectorAll('.open-modal-btn');
 
-I'm interested in learning more about your 3D product configurator services.
+            function openModal(iframeSrc) {
+                if (!modalOverlay || !modalIframe) return;
+                
+                modalIframe.src = iframeSrc;
+                modalOverlay.classList.add('visible');
+                document.body.classList.add('modal-open');
+            }
 
-Please provide information about:
-- Pricing and packages
-- Timeline for implementation
-- Customization options
-- Integration requirements
+            function closeModal() {
+                if (!modalOverlay || !modalIframe) return;
+                
+                modalOverlay.classList.remove('visible');
+                document.body.classList.remove('modal-open');
+                // IMPORTANT: Clear the iframe src to stop the 3D model from running in the background
+                modalIframe.src = '';
+            }
 
-Looking forward to hearing from you!
+            openModalButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const card = button.closest('.demo-card');
+                    if (card) {
+                        const cardIframe = card.querySelector('iframe');
+                        if (cardIframe && cardIframe.src) {
+                            openModal(cardIframe.src);
+                        }
+                    }
+                });
+            });
 
-Best regards`;
-
-            window.location.href = `mailto:hello@787studio.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+            // Event listeners to close the modal
+            if (modalCloseBtn) {
+                modalCloseBtn.addEventListener('click', closeModal);
+            }
+            if (modalOverlay) {
+                // Close when clicking on the background overlay, but not the content
+                modalOverlay.addEventListener('click', (event) => {
+                    if (event.target === modalOverlay) {
+                        closeModal();
+                    }
+                });
+            }
+            // Close with the 'Escape' key
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && modalOverlay.classList.contains('visible')) {
+                    closeModal();
                 }
             });
-        });
 
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe elements for animation
-        document.querySelectorAll('.demo-card, .feature').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
+            // --- Email button functionality ---
+            const emailBtn = document.getElementById('email-btn');
+            if(emailBtn) {
+                emailBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.location.href = "mailto:hello@787studio.com";
+                });
+            }
         });
     </script>
 </body>
